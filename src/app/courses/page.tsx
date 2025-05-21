@@ -1,7 +1,34 @@
 "use client";
 
+import type { Metadata } from "next";
 import Image from "next/image";
 import styles from "./courses.module.scss";
+
+export const metadata: Metadata = {
+  title: "Courses | Cyan University",
+  description:
+    "Explore our full range of accredited programs recognized by both industry and academia",
+  openGraph: {
+    title: "Courses | Cyan University",
+    description:
+      "Explore our full range of accredited programs recognized by both industry and academia",
+    images: [
+      {
+        url: "/assets/courses-page/course-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Cyan University Courses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Courses | Cyan University",
+    description:
+      "Explore our full range of accredited programs recognized by both industry and academia",
+    images: ["/assets/courses-page/course-banner.png"],
+  },
+};
 
 export default function About() {
   return (

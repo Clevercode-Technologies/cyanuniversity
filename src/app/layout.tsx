@@ -18,6 +18,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cyan University",
   description: "Unlock the next level of your career",
+  icons: {
+    icon: "/assets/favicon.png",
+    shortcut: "/assets/favicon.png",
+    apple: "/assets/favicon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://cyanuniversity-5i4h.vercel.app",
+    siteName: "Cyan University",
+    title: "Cyan University",
+    description: "Unlock the next level of your career",
+    images: [
+      {
+        url: "/assets/courses-page/course-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Cyan University",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cyan University",
+    description: "Unlock the next level of your career",
+    images: ["/assets/courses-page/course-banner.png"],
+  },
 };
 
 export default function RootLayout({

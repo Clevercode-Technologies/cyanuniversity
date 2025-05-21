@@ -2,6 +2,33 @@
 
 import Image from "next/image";
 import styles from "./about.module.scss";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Cyan University",
+  description:
+    "Learn about Cyan University's mission, vision, and commitment to excellence in education",
+  openGraph: {
+    title: "About Us | Cyan University",
+    description:
+      "Learn about Cyan University's mission, vision, and commitment to excellence in education",
+    images: [
+      {
+        url: "/assets/about-page/about-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "About Cyan University",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Cyan University",
+    description:
+      "Learn about Cyan University's mission, vision, and commitment to excellence in education",
+    images: ["/assets/about-page/about-banner.png"],
+  },
+};
 
 export default function About() {
   return (
@@ -15,7 +42,7 @@ export default function About() {
             At Cyan University, we&apos;re on a mission to equip individuals
             with the tech skills they need to thrive in the digital age. Our
             courses, created by industry experts, are designed to meet the
-            demands of today’s fast-evolving tech landscape.
+            demands of today&apos;s fast-evolving tech landscape.
           </p>
         </div>
       </div>
@@ -117,7 +144,7 @@ export default function About() {
             </h3>
           </div>
           <p className={`${styles.outline__excert} font-libre-bodoni-500`}>
-            Real-world projects because theory alone doesnt’t cut it
+            Real-world projects because theory alone doesn&apos;t cut it
           </p>
         </div>
       </div>
