@@ -1,0 +1,56 @@
+$primary-text: #00080a;
+$secondary-text: #003340;
+$primary-bg: #003340;
+
+.header__container {
+  height: 110vh;
+  width: 100vw;
+  background-image: url("/assets/image/header-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-left: 38px;
+}
+
+.header__nav {
+  position: absolute;
+  top: 0px;
+  left: 38px;
+  right: 38px;
+}
+
+.header__content {
+  padding-top: 12rem;
+  .minor__titleContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .minorTitle {
+      color: $primary-text;
+      font-size: 20px;
+    }
+  }
+  .major__textContainer {
+    margin-top: 16px;
+    font-size: 50px;
+    color: $primary-text;
+    .excluded__text {
+      color: $secondary-text;
+    }
+  }
+  .register__button {
+    background-color: $primary-bg;
+    width: 190px;
+    height: 51px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

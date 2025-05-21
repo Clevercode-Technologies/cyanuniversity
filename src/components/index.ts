@@ -1,0 +1,12 @@
+export { default as Navigation } from "./HomePage/Navigation/Navigation";
+export { default as Header } from "./HomePage/Header/Header";
+export { default as CoursesOutline } from "./HomePage/CoursesOutline/CoursesOutline";
+export { default as About } from "./HomePage/About/About";
+export { default as FiguresBanner } from "./HomePage/FiguresBanner/FiguresBanner";
+export { default as ChooseUs } from "./HomePage/ChooseUs/ChooseUs";
+export { default as Featured } from "./HomePage/Featured/Featured";
+export { default as SuccessStories } from "./HomePage/SuccessStories/SuccessStories";
+export { default as Apply } from "./HomePage/Apply/Apply";
+export { default as Trending } from "./HomePage/Trending/Trending";
+export { default as Footer } from "./Footer/Footer";
+export { default as Loader } from "./Loader/Loader";

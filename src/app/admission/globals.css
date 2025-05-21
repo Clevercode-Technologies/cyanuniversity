@@ -1,0 +1,14 @@
+.nav__wrapper {
+    background-color: #F0F8FB;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__wrapper {
+        margin-top: 0px;
+        padding-bottom: 0px;
+    }
+}

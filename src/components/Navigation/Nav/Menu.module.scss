@@ -1,0 +1,86 @@
+// SCSS Variables
+$primary-accent-color: #f18820;
+$text-color-light: #ffffff;
+$text-color-accent: $primary-accent-color;
+
+// Styles for Nav.jsx (motion.ul)
+.navList {
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0; // Reset default ul padding
+}
+
+// Styles for MenuItem.jsx
+.menuItem {
+  text-align: center;
+  list-style: none; // Remove default li bullet
+  // Default padding, can be overridden by type-specific classes
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.menuItemLinkType {
+  // Inherits .menuItem base styles
+  // Specific padding for link type already covered by .menuItem default
+}
+
+.menuItemAuthType {
+  @extend .menuItem; // Inherit base styles from .menuItem
+  padding-top: 21px;
+}
+
+.menuItemDemoType {
+  @extend .menuItem; // Inherit base styles from .menuItem
+  padding-top: 10px;
+  padding-bottom: 10px; // Assuming demo might need specific bottom padding too
+}
+
+.menuLink {
+  color: $text-color-light;
+  text-decoration: none; // Common reset for links
+  &:hover {
+    // Add hover effect if desired, e.g., color change or underline
+    // text-decoration: underline;
+  }
+}
+
+.authButtonBase {
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 186px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex; // For centering text if needed, though text-align on parent might handle
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; // Ensure links styled as buttons don't have underline
+  box-sizing: border-box; // Ensure padding and border don't increase width beyond 185px
+}
+
+.authButtonSignIn {
+  @extend .authButtonBase;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent; // Explicitly set background
+
+  &:hover {
+    background-color: rgba(
+      $primary-accent-color,
+      0.1
+    ); // Slight background on hover
+  }
+}
+
+.authButtonSignUp {
+  @extend .authButtonBase;
+  background-color: $primary-accent-color;
+  color: $text-color-light;
+  border: 1px solid $primary-accent-color; // Ensure border consistency or remove if not needed
+
+  &:hover {
+    background-color: #d67a1c; // Darker shade of $primary-accent-color
+  }
+}

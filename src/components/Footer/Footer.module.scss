@@ -1,0 +1,178 @@
+// Define colors (consider moving to a global variables file if used elsewhere)
+$footer-bg: #00080a; // Example: A dark teal/blue, adjust as needed
+$footer-text-primary: #ffffff;
+$footer-text-secondary: #a0bdc6; // Lighter, slightly muted for less emphasis
+$footer-heading-color: #e0f7ff; // Slightly brighter for headings
+$footer-link-hover: #ffb600; // Example: your active border color for hover
+
+.footer {
+  background-color: $footer-bg;
+  color: $footer-text-primary;
+  padding: 60px 20px 30px; // Generous padding top, less bottom before copyright
+  font-family: "Arial", sans-serif; // Example font, adjust to match your site
+
+  // Top section containing logo/description and link columns
+  .footerTop {
+    display: flex;
+    flex-wrap: wrap; // Allow items to wrap on smaller screens
+    justify-content: space-between;
+    gap: 40px; // Gap between columns
+    margin-bottom: 40px;
+    padding: 0px 100px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+
+    .footerAbout,
+    .footerLinksColumn {
+      flex: 1; // Allow columns to grow
+      min-width: 220px; // Minimum width before wrapping/stacking effectively
+    }
+
+    .footerAbout {
+      // flex-basis: 30%; // Example: Give logo section a bit more space if needed
+      margin-right: 20px; // Extra gap next to logo section if not using space-around
+
+      .footerAboutText {
+        font-size: 20px;
+        line-height: 180%;
+        letter-spacing: 2%;
+      }
+      img {
+        // Styling for the logo
+        max-width: 300px; // Adjust as needed, original is 366px
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: $footer-text-secondary;
+      }
+    }
+
+    .footerLinksColumn {
+      // Styles for each column of links (Quick Links, Resources, Social)
+      h2.footerLinksColumnTitle {
+        font-size: 18px;
+        color: $footer-heading-color;
+        margin-bottom: 20px;
+        font-weight: 600; // Assuming Libre Bodoni is used via global styles
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
+
+        li.footerLinksColumnItem {
+          margin-bottom: 8px;
+          letter-spacing: 2%;
+          line-height: 180%;
+          font-size: 20px;
+
+          a,
+          span {
+            // Assuming list items might be links or just text
+            color: $footer-text-secondary;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $footer-link-hover;
+              text-decoration: underline; // Optional: underline on hover
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+  // Bottom section for copyright
+  .footerBottom {
+    text-align: center;
+    padding-top: 30px;
+    // border-top: 1px solid white; // A subtle top border
+
+    h2.footerBottomText {
+      // Using h2 as per your TSX, but p might be more semantic for copyright
+      font-size: 24px;
+      color: white;
+      line-height: 100%;
+    }
+  }
+
+  // Responsive adjustments (mobile-first approach would have these as base styles)
+  // But for now, adjusting from desktop down.
+  @media screen and (max-width: 992px) {
+    // Tablet range
+    .footerTop {
+      .footerAbout {
+        flex-basis: 100%; // Logo/desc takes full width
+        margin-right: 0;
+        text-align: center; // Center logo and text
+        img {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .footerLinksColumn {
+        flex-basis: 45%; // Two columns for links
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    // Mobile range
+    .footerTop {
+      flex-direction: column; // Stack everything vertically
+      align-items: center; // Center items when stacked
+      text-align: center;
+
+      .footerAbout,
+      .footerLinksColumn {
+        flex-basis: auto; // Reset basis
+        width: 100%; // Take full width
+        max-width: 350px; // Max width for centered content on mobile
+        margin-bottom: 30px;
+        text-align: left; // Align text left within each stacked column for readability
+      }
+      .footerAbout {
+        img {
+          margin-left: 0;
+          margin-right: 0;
+        } // Align image left in its block
+      }
+      .footerLinksColumn h2 {
+        // text-align: center; // Or keep left
+      }
+    }
+    .footerBottom h2 {
+      font-size: 13px;
+    }
+  }
+}
+
+
+.footerDivider {
+    width: 100vw;
+    height: .5px;
+    transform: translateX(-20px);
+  }

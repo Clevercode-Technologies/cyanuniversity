@@ -1,0 +1,57 @@
+$primary-bg: #003340;
+
+.outline__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 76px;
+    margin-bottom: 103px;
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .card__image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .excert__container {
+        background-color: $primary-bg;
+        width: 269px;
+        height: 146px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            height: 120px;
+        }
+
+        .excert {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 18px;
+            }
+        }
+    }
+}

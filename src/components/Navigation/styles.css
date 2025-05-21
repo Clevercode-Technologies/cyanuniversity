@@ -1,0 +1,51 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10000;
+  pointer-events: none; /* Allow clicks to pass through when menu is closed */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 110vh;
+  pointer-events: none; /* Allow clicks to pass through when menu is closed */
+}
+
+.open-bg {
+  background-color: #003340;
+  pointer-events: auto; /* Enable clicks when menu is open */
+}
+
+.close-bg {
+  background-color: #003340;
+  pointer-events: none; /* Disable clicks when menu is closed */
+}
+
+.max-w {
+  max-width: 100vw;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

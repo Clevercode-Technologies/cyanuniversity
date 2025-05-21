@@ -1,0 +1,74 @@
+$dark-text: #00080a;
+$dark-button-bg: #003340;
+
+.about__container {
+  margin: 0px 38px;
+  display: flex;
+  justify-content: space-between;
+
+  .about__left {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    width: fit-content;
+    // Ensure parent has perspective for 3D transforms if needed, though not strictly for translateY
+    // perspective: 1000px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
+    .logo__about {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    // Framer Motion will handle initial opacity and transform for animation.
+    // We define the final resting state here if different from default.
+    .left__image {
+      // Final resting Y position after initial animation
+      // If you want it to start at -42px and then parallax from there,
+      // this class might not even need specific transform if base is 0.
+      // For now, let's assume the parallax will be *around* this final spot.
+    }
+
+    .right__image {
+      // Final resting Y position after initial animation
+    }
+  }
+  // .about__right might need some height if it's part of scroll calculations
+  // or if content will eventually be added there.
+  .about__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 560px;
+    .about__right__title {
+      color: $dark-text;
+      font-size: 40px;
+      line-height: 40px;
+    }
+    .about__right__description {
+      color: $dark-text;
+      font-size: 20px;
+      line-height: 40px;
+    }
+    .about__right__button {
+      background-color: $dark-button-bg;
+      color: #fff;
+      border-radius: 5px;
+      height: 51px;
+      padding: 0px 22px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 58px;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+$dark-text: #00080a;
+$active-border: #ffb600;
+$main-bg: #b6e1ec;
+
+.successStories {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background-color: $main-bg;
+  padding: 0 20px;
+
+  .successStories__heading {
+    transition: all 0.3s ease-in-out;
+    .successStories__title > h2 {
+      font-size: 32px;
+      line-height: 180%;
+      color: $dark-text;
+      letter-spacing: 2%;
+      @media screen and (min-width: 768px) {
+        font-size: 40px;
+      }
+    }
+    .successStories__description > p {
+      font-size: 15px;
+      line-height: 180%;
+      color: $dark-text;
+      letter-spacing: 2%;
+      max-width: 100%;
+      padding: 0 10px;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+        max-width: 645px;
+        padding: 0;
+      }
+    }
+  }
+
+  .successStories__stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+
+    .successStories__story {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      width: calc(50% - 10px);
+      max-width: 160px;
+
+      @media screen and (min-width: 480px) and (max-width: 767px) {
+        width: calc(33.33% - 14px);
+      }
+
+      @media screen and (min-width: 768px) {
+        width: auto;
+      }
+
+      .storyImagePreview {
+        display: block;
+        filter: brightness(0.3);
+        transition: filter 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        border: 1px solid transparent;
+      }
+
+      .storyImageIsActive {
+        filter: brightness(1);
+        border: 1px solid $active-border;
+      }
+
+      .frame {
+        display: block;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        opacity: 0;
+        z-index: 5;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+        filter: brightness(1) !important;
+      }
+
+      &.storyItemIsActive {
+        .frame {
+          opacity: 1;
+        }
+      }
+
+      &:not(.storyItemIsActive):hover {
+        .storyImagePreview {
+          filter: brightness(0.6);
+        }
+      }
+    }
+  }
+  .story__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 90px;
+    }
+
+    & > img {
+      // No specific responsive changes needed if size is already good
+    }
+
+    .typewriterWrapper {
+      max-width: 100%;
+      text-align: center;
+      width: 100%;
+      min-height: 100px;
+
+      @media screen and (min-width: 768px) {
+        max-width: 922px;
+        text-align: left;
+        min-height: 150px;
+      }
+    }
+
+    .typewriterText {
+      // If you need to override font styles specifically for the typed part
+      // Or if font-libre-bodoni-700 isn't applying as expected from the parent div.
+    }
+
+    .typewriterCursor {
+      // Example: make cursor match your text color or a brand color
+      // color: $dark-text;
+      // font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+$primary-text: #003340;
+$border-color: #003340;
+$border-width: 4px;
+
+.figures__container {
+  display: flex;
+  flex-direction: column; // Default to vertical layout on mobile
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+  margin-top: 10rem;
+  margin-left: 38px;
+  margin-right: 38px;
+  gap: 32px; // Add gap between items in vertical layout
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row; // Switch to horizontal layout on desktop
+    gap: 0; // Remove gap in horizontal layout
+  }
+
+  .figures__item {
+    height: 184px;
+    padding: 32px 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 400px; // Full width on mobile
+
+    @media screen and (max-width: 768px) {
+      width: 100%; // Auto width on desktop
+    }
+
+    .figures__title {
+      color: $primary-text;
+      font-size: 36px;
+      margin: 0px !important;
+    }
+    .figures__description {
+      color: black;
+      font-size: 20px;
+      text-align: center;
+      line-height: 40px;
+      margin: 0px !important;
+    }
+  }
+
+  .figures__item_middle {
+    // Mobile first: top and bottom borders
+    border-top: $border-width solid $border-color;
+    border-bottom: $border-width solid $border-color;
+    border-left: none;
+    border-right: none;
+
+    // Desktop: left and right borders
+    @media screen and (min-width: 768px) {
+      border-top: none;
+      border-bottom: none;
+      border-left: $border-width solid $border-color;
+      border-right: $border-width solid $border-color;
+    }
+  }
+}

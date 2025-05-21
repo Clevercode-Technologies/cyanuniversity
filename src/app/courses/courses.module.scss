@@ -1,0 +1,274 @@
+$primary-text: #021c3d;
+$secondary-text: #00080a;
+$tertiary-bg: #f9fcff;
+$button-bg: #003340;
+$border-color: #003340;
+
+.courses {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  
+  .banner__container {
+    background-image: url("/assets/courses-page/course-banner.png");
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .banner__content {
+      background: linear-gradient(
+        270deg,
+        rgba(43, 107, 226, 0) 0%,
+        rgba(242, 250, 250, 0.21) 13.12%,
+        rgba(242, 250, 250, 0.39) 24.23%,
+        rgba(242, 250, 250, 0.57) 35.83%,
+        rgba(242, 250, 250, 0.69) 44.48%,
+        rgba(242, 250, 250, 0.74) 50.41%,
+        rgba(242, 250, 250, 0.95) 57.07%,
+        #f2fafa 84.29%
+      );
+      max-width: 65%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 100px;
+
+      .banner__title {
+        font-size: 60px;
+        letter-spacing: 2%;
+        color: #00080a;
+        margin-bottom: 20px;
+      }
+      .banner__description {
+        font-size: 20px;
+        line-height: 32px;
+        max-width: 559px;
+      }
+    }
+  }
+
+  .main__content__container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    max-width: 100%;
+    
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    .left__container {
+      flex: 1;
+      min-width: 0; /* Crucial fix to prevent flex item overflow */
+      
+      .section__header {
+        padding: 0 20px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        @media screen and (min-width: 768px) {
+          padding: 0 50px;
+        }
+        
+        .section__title {
+          font-size: 32px;
+          color: $secondary-text;
+        }
+
+        select {
+          background: none;
+          width: 234px;
+          height: 56px;
+          padding-left: 20px;
+          font-size: 20px;
+          line-height: 40px;
+
+        }
+      }
+      
+      .left__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0 50px;
+          gap: 30px;
+        }
+
+        @media screen and (min-width: 1200px) {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 37px;
+        }
+
+        .featured__card {
+          gap: 10px;
+          border: 1px solid #d9d9d9;
+          background-color: $tertiary-bg;
+          width: 100%;
+          max-width: 100%;
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          box-sizing: border-box;
+
+          @media screen and (min-width: 768px) {
+            padding: 20px;
+          }
+
+          img.featured__card__image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .featured__card__info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 18px;
+            text-align: left;
+
+            .featured__card__info__badge {
+              background-color: $button-bg;
+              width: 185px;
+              padding: 0 30px;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              color: white;
+              gap: 10px;
+
+              .totalLessons {
+                font-size: 14px;
+                line-height: 180%;
+                letter-spacing: 2%;
+              }
+            }
+
+            .featured__card__info__title {
+              margin-top: 15px;
+              
+              .featured__card__info__title__text {
+                font-size: 20px;
+                line-height: 130%;
+                color: $secondary-text;
+                margin-bottom: 10px;
+              }
+
+              .featured__card__info__title__description {
+                font-size: 16px;
+                line-height: 150%;
+                color: $secondary-text;
+              }
+
+              .featured__card__info__title__button {
+                color: white;
+                border: none;
+                background-color: #003340;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                margin-top: 30px;
+                cursor: pointer;
+                padding: 5px 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .right__container {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-top: 30px;
+      
+      @media screen and (min-width: 1024px) {
+        width: 280px;
+        min-width: 280px;
+        flex-shrink: 0;
+        margin-top: 0;
+      }
+      
+      .title {
+        font-size: 24px;
+        color: $secondary-text;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #003340;
+      }
+      
+      .search__bar {
+        display: flex;
+        align-items: center;
+        border: 1px solid #DEE1E1;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+        background-color: #CFD3D3B0;
+        
+        input {
+          flex: 1;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          font-family: 'Libre Bodoni', serif;
+          background: none;
+          color: #8F8B8B;
+          
+          &::placeholder {
+            color: #8F8B8B;
+          }
+        }
+      }
+      
+      .sub__title {
+        font-size: 18px;
+        color: $secondary-text;
+        margin-bottom: 15px;
+        margin-top: 20px;
+      }
+      
+      .checkbox__container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+        
+        .checkbox__item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          
+          .checkbox__input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+          }
+          
+          .checkbox__label {
+            font-size: 16px;
+            color: $secondary-text;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
