@@ -1,12 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: "export", // Enable static exports
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  // Disable server-side features since we're doing static export
   trailingSlash: true,
+  distDir: "out",
 };
 
 export default nextConfig;
