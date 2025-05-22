@@ -125,84 +125,40 @@
     flex-direction: column;
     align-items: center;
     margin: 70px 20px;
+    gap: 30px;
 
     @media screen and (min-width: 768px) {
       flex-direction: row;
       justify-content: space-around;
-      margin: 120px 0px;
+      margin: 120px 50px;
+      gap: 0;
     }
+
     .outline__item {
+      width: 100%;
+      max-width: 325px;
+
       div {
         display: flex;
         align-items: center;
         gap: 10px;
       }
+
       .outline__excert {
         max-width: 325px;
-        font-size: 20px;
-        line-height: 40px;
-        margin-left: 52px;
-      }
-    }
-  }
-
-  .vision {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 46px;
-    padding: 0 20px;
-    margin: 50px 0;
-
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      gap: 50px;
-      padding: 0 50px;
-      margin: 100px 0;
-    }
-
-    div {
-      width: 100%;
-      text-align: center;
-
-      @media screen and (min-width: 768px) {
-        width: 50%;
-        text-align: left;
-      }
-
-      h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
-
-        @media screen and (min-width: 768px) {
-          font-size: 40px;
-        }
-      }
-
-      p {
-        max-width: 100%;
-        color: #00080a;
         font-size: 16px;
         line-height: 28px;
+        margin-left: 52px;
 
         @media screen and (min-width: 768px) {
-          max-width: 524px;
           font-size: 20px;
           line-height: 40px;
         }
       }
     }
-
-    img {
-      width: 100%;
-      height: auto;
-      max-width: 774px;
-      object-fit: contain;
-    }
   }
 
+  .vision,
   .reverse__vision {
     display: flex;
     flex-direction: column-reverse;
@@ -211,8 +167,8 @@
     padding: 0 20px;
     margin: 50px 0;
 
-    @media screen and (min-width: 768px) {
-      flex-direction: row-reverse;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
       justify-content: space-around;
       align-items: center;
       gap: 50px;
@@ -220,13 +176,25 @@
       margin: 100px 0;
     }
 
+    &.reverse__vision {
+      @media screen and (min-width: 1024px) {
+        flex-direction: row-reverse;
+      }
+    }
+
     div {
       width: 100%;
       text-align: center;
+      padding: 0 20px;
 
       @media screen and (min-width: 768px) {
+        padding: 0 50px;
+      }
+
+      @media screen and (min-width: 1024px) {
         width: 50%;
         text-align: left;
+        padding: 0;
       }
 
       h2 {
@@ -234,6 +202,10 @@
         margin-bottom: 20px;
 
         @media screen and (min-width: 768px) {
+          font-size: 36px;
+        }
+
+        @media screen and (min-width: 1024px) {
           font-size: 40px;
         }
       }
@@ -245,39 +217,52 @@
         line-height: 28px;
 
         @media screen and (min-width: 768px) {
-          max-width: 524px;
+          font-size: 18px;
+          line-height: 32px;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        @media screen and (min-width: 1024px) {
           font-size: 20px;
           line-height: 40px;
+          max-width: 524px;
+          margin: 0;
         }
       }
 
       button.waitlist {
-        max-width: 200px;
+        // max-width: 200px;
         border-radius: 5px;
         background-color: #003340;
         outline: none;
         border: none;
         padding: 9px 19px;
         font-size: 20px;
+        max-height: 67px;
         color: white;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
-        transform: translateX(50%);
-        margin-top: 2rem;
-        cursor: pointer;
+        margin: 2rem auto;
 
-        img {
-          width: 31px;
-          height: 31px;
+        .waitlistBtn {
+          max-width: 31px;
+          max-height: 31px;
         }
 
         @media screen and (min-width: 768px) {
-          max-width: 250px;
+          // max-width: 220px;
+          font-size: 24px;
+          margin: 3rem auto;
+        }
+
+        @media screen and (min-width: 1024px) {
+          // max-width: 250px;
           font-size: 32px;
-          gap: 5px;
-          justify-content: space-around;
-          margin-top: 5rem;
+          margin: 5rem 0;
+          transform: none;
         }
       }
     }
@@ -287,6 +272,110 @@
       height: auto;
       max-width: 774px;
       object-fit: contain;
+      padding: 0 20px;
+
+      @media screen and (min-width: 768px) {
+        padding: 0 50px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        padding: 0;
+      }
+    }
+  }
+
+  .banner__section {
+    width: 100%;
+    height: auto;
+    max-width: 1440px;
+    object-fit: cover;
+    margin: 50px 0;
+
+    @media screen and (min-width: 768px) {
+      margin: 100px 0;
+    }
+  }
+
+  .management {
+    padding: 0 20px;
+    margin-bottom: 70px;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 50px;
+      margin-bottom: 120px;
+    }
+
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+      text-align: center;
+      margin-bottom: 40px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 40px;
+        margin-bottom: 60px;
+      }
+    }
+
+    .team__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      justify-content: center;
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+      }
+
+      .team__card {
+        width: 100%;
+        max-width: 402px;
+        border-radius: 20px;
+        position: relative;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: inherit;
+        }
+
+        .info {
+          background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            #000000 100%
+          );
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          border-bottom-left-radius: inherit;
+          border-bottom-right-radius: inherit;
+          padding: 20px;
+
+          .name {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 5px;
+
+            @media screen and (min-width: 768px) {
+              font-size: 24px;
+            }
+          }
+
+          .role {
+            font-size: 14px;
+            color: white;
+
+            @media screen and (min-width: 768px) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
     }
   }
 }

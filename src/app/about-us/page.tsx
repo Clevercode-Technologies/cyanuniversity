@@ -2,33 +2,6 @@
 
 import Image from "next/image";
 import styles from "./about.module.scss";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Us | Cyan University",
-  description:
-    "Learn about Cyan University's mission, vision, and commitment to excellence in education",
-  openGraph: {
-    title: "About Us | Cyan University",
-    description:
-      "Learn about Cyan University's mission, vision, and commitment to excellence in education",
-    images: [
-      {
-        url: "/assets/about-page/about-banner.png",
-        width: 1200,
-        height: 630,
-        alt: "About Cyan University",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Us | Cyan University",
-    description:
-      "Learn about Cyan University's mission, vision, and commitment to excellence in education",
-    images: ["/assets/about-page/about-banner.png"],
-  },
-};
 
 export default function About() {
   return (
@@ -199,6 +172,7 @@ export default function About() {
               src={"/assets/icons/arr-right.png"}
               width={31}
               height={31}
+              className={styles.waitlistBtn}
             />
           </button>
         </div>
@@ -210,6 +184,68 @@ export default function About() {
           height={569}
         />
       </div>
+
+      <Image
+        alt="banner-section"
+        src={"/banner-section.png"}
+        width={1440}
+        height={351}
+        className={styles.banner__section}
+      />
+
+      <div className={styles.management}>
+        <h2 className={'font-libre-bodoni-700'}>Meet our Management & Team</h2>
+
+        <div className={styles.team__container}>
+          {management.map((item, index) => (
+            <div key={`${index}-team-card`} className={styles.team__card}>
+              <Image alt="team-image" src={item.image} width={402} height={500} />
+
+              <div className={styles.info}>
+                <h3 className={'font-libre-bodoni-700 ' + styles.name}>{item.name}</h3>
+                <p className={'font-libre-bodoni-400 ' + styles.role}>{item.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
+
+const management: {
+  name: string;
+  role: string;
+  image: string;
+}[] = [
+  {
+    name: "Olaoluwa Olaiya",
+    role: "Vice Chancellor",
+    image: "/assets/team/team.png",
+  },
+  {
+    name: "David Adebayo",
+    role: "Vice Chancellor",
+    image: "/assets/team/team.png",
+  },
+  {
+    name: "Lucky Tunde",
+    role: "Vice Chancellor",
+    image: "/assets/team/team.png",
+  },
+  {
+    name: "Precious Osamuyi",
+    role: "Vice Chancellor",
+    image: "/assets/team/team.png",
+  },
+  {
+    name: "Asemota Asim",
+    role: "Vice Chancellor",
+    image: "/assets/team/team.png",
+  },
+  {
+    name: "Nathan Bassy",
+    role: "Vice Chancellor",
+    image: "/assets/team/team.png",
+  },
+];
