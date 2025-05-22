@@ -21,7 +21,7 @@ const variants = {
   },
 };
 
-export const MenuItem = ({ i, toggleOpen }) => {
+export const MenuItem = ({ i, toggleOpen, onWaitlistClick }) => {
   const [open, setOpen] = React.useState(false);
 
   const getItemSpecificClassName = () => {
@@ -45,12 +45,7 @@ export const MenuItem = ({ i, toggleOpen }) => {
       );
     } else if (i.type === "auth") {
       return (
-        <button
-          onClick={() => {
-            setOpen(true);
-          }}
-          className={styles.authButtonSignIn}
-        >
+        <button onClick={onWaitlistClick} className={styles.authButtonSignIn}>
           Join Waitlist
         </button>
       );
@@ -65,7 +60,7 @@ export const MenuItem = ({ i, toggleOpen }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className={`${styles.menuItem} ${getItemSpecificClassName()}`}
-        onClick={() => toggleOpen()}
+        onClick={() => i.type !== "auth" && toggleOpen()}
       >
         {renderContent()}
       </motion.li>

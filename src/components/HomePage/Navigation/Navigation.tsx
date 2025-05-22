@@ -4,9 +4,15 @@ import Image from "next/image";
 import styles from "./Navigation.module.scss";
 import Link from "next/link";
 import MobileNavigation from "@/components/Navigation/MobileNavigation";
-
+import { useRouter } from "next/navigation";
 
 export default function Navigation() {
+  const router = useRouter();
+
+  const handleWaitlistClick = () => {
+    router.push("/waitlist");
+  };
+
   return (
     <>
       <div className={styles.navigation__container}>
@@ -37,6 +43,7 @@ export default function Navigation() {
 
         <button
           className={`${styles.navigation__button} font-libre-bodoni-700`}
+          onClick={handleWaitlistClick}
         >
           <span>Join Waitlist</span>
           <Image

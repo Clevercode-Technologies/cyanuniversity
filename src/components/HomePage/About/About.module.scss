@@ -69,6 +69,21 @@ $dark-button-bg: #003340;
       align-items: center;
       gap: 12px;
       margin-top: 58px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: darken($dark-button-bg, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .arrow__icon {
+          transform: translateX(5px);
+        }
+      }
+
+      .arrow__icon {
+        transition: transform 0.3s ease;
+      }
     }
   }
 }

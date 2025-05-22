@@ -3,10 +3,15 @@
 import { Navigation } from "@/components";
 import styles from "./Header.module.scss";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleWaitlistClick = () => {
+    router.push("/waitlist");
+  };
 
   return (
     <>
@@ -14,7 +19,8 @@ export default function Header() {
       pathname.startsWith("/about-us") ||
       pathname.startsWith("/admission") ||
       pathname.startsWith("/blog") ||
-      pathname.startsWith("/contact") ? (
+      pathname.startsWith("/contact") ||
+      pathname.startsWith("/waitlist") ? (
         <></>
       ) : (
         <div className={styles.header__container}>
@@ -43,14 +49,15 @@ export default function Header() {
             </div>
             <button
               className={`${styles.register__button} font-libre-bodoni-700`}
+              onClick={handleWaitlistClick}
             >
-              <span></span>
-              Join Waitlist
+              <span>Join Waitlist</span>
               <Image
                 alt="right arrow"
                 src={"/assets/icons/arr-right.png"}
                 width={24}
                 height={24}
+                className={styles.arrow__icon}
               />
             </button>
           </div>

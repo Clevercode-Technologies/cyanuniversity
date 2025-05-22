@@ -52,5 +52,20 @@ $primary-bg: #003340;
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-bg, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      .arrow__icon {
+        transform: translateX(5px);
+      }
+    }
+
+    .arrow__icon {
+      transition: transform 0.3s ease;
+    }
   }
 }

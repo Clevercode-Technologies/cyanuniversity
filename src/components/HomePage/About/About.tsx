@@ -4,9 +4,11 @@ import Image from "next/image";
 import styles from "./About.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
 
   // Scroll progress within the containerRef
   const { scrollYProgress } = useScroll({
@@ -22,6 +24,10 @@ export default function About() {
 
   const initialYLeft = -42;
   const initialYRight = 42;
+
+  const handleWaitlistClick = () => {
+    router.push("/waitlist");
+  };
 
   return (
     <div ref={containerRef} className={styles.about__container}>
@@ -100,13 +106,17 @@ export default function About() {
           We offer low monthly fees for our courses, making education accessible
           to all.
         </p>
-        <button className={styles.about__right__button}>
+        <button
+          className={styles.about__right__button}
+          onClick={handleWaitlistClick}
+        >
           <p>Join Waitlist</p>
           <Image
             alt="arrow-right"
             src={"/assets/icons/arr-right.png"}
             width={24}
             height={24}
+            className={styles.arrow__icon}
           />
         </button>
       </div>

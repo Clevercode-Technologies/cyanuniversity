@@ -2,8 +2,15 @@
 
 import Image from "next/image";
 import styles from "./about.module.scss";
+import { useRouter } from "next/navigation";
 
 export default function About() {
+  const router = useRouter();
+
+  const handleWaitlistClick = () => {
+    router.push("/waitlist");
+  };
+
   return (
     <div className={styles.about}>
       <div className={styles.banner__container}>
@@ -165,7 +172,10 @@ export default function About() {
             latest advancements in technology and meet employer needs.
           </p>
 
-          <button className={`${styles.waitlist} font-libre-bodoni-700`}>
+          <button
+            className={`${styles.waitlist} font-libre-bodoni-700`}
+            onClick={handleWaitlistClick}
+          >
             Join waitlist
             <Image
               alt="arrow-right"
@@ -194,19 +204,105 @@ export default function About() {
       />
 
       <div className={styles.management}>
-        <h2 className={'font-libre-bodoni-700'}>Meet our Management & Team</h2>
+        <h2 className={"font-libre-bodoni-700"}>Meet our Management & Team</h2>
 
         <div className={styles.team__container}>
           {management.map((item, index) => (
             <div key={`${index}-team-card`} className={styles.team__card}>
-              <Image alt="team-image" src={item.image} width={402} height={500} />
+              <Image
+                alt="team-image"
+                src={item.image}
+                width={402}
+                height={500}
+              />
 
               <div className={styles.info}>
-                <h3 className={'font-libre-bodoni-700 ' + styles.name}>{item.name}</h3>
-                <p className={'font-libre-bodoni-400 ' + styles.role}>{item.role}</p>
+                <h3 className={"font-libre-bodoni-700 " + styles.name}>
+                  {item.name}
+                </h3>
+                <p className={"font-libre-bodoni-400 " + styles.role}>
+                  {item.role}
+                </p>
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className={styles.supporters}>
+        <h2 className={`${styles.supporters__title} font-libre-bodoni-700`}>
+          Our Supporters
+        </h2>
+
+        <div className={styles.logo__Carousel__container}>
+          <div className={styles.logo__track}>
+            {/* First set of logos */}
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-1.png"
+                alt="Partner Logo 1"
+                width={200}
+                height={80}
+              />
+            </div>
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-2.png"
+                alt="Partner Logo 2"
+                width={200}
+                height={80}
+              />
+            </div>
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-3.png"
+                alt="Partner Logo 3"
+                width={200}
+                height={80}
+              />
+            </div>
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-4.png"
+                alt="Partner Logo 4"
+                width={200}
+                height={80}
+              />
+            </div>
+            {/* Duplicate set for seamless loop */}
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-1.png"
+                alt="Partner Logo 1"
+                width={200}
+                height={80}
+              />
+            </div>
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-2.png"
+                alt="Partner Logo 2"
+                width={200}
+                height={80}
+              />
+            </div>
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-3.png"
+                alt="Partner Logo 3"
+                width={200}
+                height={80}
+              />
+            </div>
+            <div className={styles.logo__slide}>
+              <Image
+                src="/assets/partners/logo-4.png"
+                alt="Partner Logo 4"
+                width={200}
+                height={80}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
