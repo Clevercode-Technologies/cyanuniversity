@@ -158,6 +158,83 @@ export default function Admission() {
           </p>
         </div>
       </div>
+
+      <div className={styles.enroll}>
+        <h2 className={`${styles.title} font-libre-bodoni-700`}>Enroll Now</h2>
+
+        <Image
+          alt={"enroll_image"}
+          src={"/assets/admission/enroll-section.png"}
+          height={893}
+          width={1364}
+          className={styles.enroll__image}
+        />
+
+        <div className={styles.erollment__form}>
+          <h2 className={`${styles.title__form} font-libre-bodoni-700`}>
+            Application form
+          </h2>
+
+          <div className={styles.form__row}>
+            <input
+              type="text"
+              placeholder="First Name"
+              className={styles.form__input}
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className={styles.form__input}
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              className={styles.form__input}
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              className={styles.form__input}
+            />
+            <input
+              type="date"
+              placeholder="Date of Birth"
+              className={styles.form__input}
+            />
+            <select className={styles.form__input}>
+              <option value="" disabled selected>
+                Select Gender
+              </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Country"
+              className={styles.form__input}
+            />
+            <input
+              type="text"
+              placeholder="City"
+              className={styles.form__input}
+            />
+            <textarea
+              placeholder="Tell us about yourself and why you want to join Cyan University"
+              className={styles.form__textarea}
+            ></textarea>
+            <button className={styles.enroll__button}>
+              Enroll Now
+              <Image
+                src="/assets/admission/submit-arr.png"
+                alt="arrow right"
+                width={24}
+                height={24}
+                className={styles.button__icon}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

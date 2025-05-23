@@ -35,12 +35,12 @@ interface CustomLayoutProps {
 
 const CustomLayout = ({ children }: CustomLayoutProps) => {
   return (
-    <SmoothScroll>
-      <div className="nav__wrapper">
-        <Navigation />
-      </div>
-      <main>{children}</main>
-    </SmoothScroll>
+        <SmoothScroll>
+            <div className="nav__wrapper">
+                <Navigation />
+            </div>
+          <main>{children}</main>
+        </SmoothScroll>
   );
 };
 
