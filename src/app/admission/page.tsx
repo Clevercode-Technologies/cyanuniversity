@@ -83,8 +83,8 @@ export default function Admission() {
             height={38}
           />
           <h3 className="font-libre-bodoni-500">
-            Plus our subscription plans keep learners engaged long after they&apos;ve
-            completed their courses
+            Plus our subscription plans keep learners engaged long after
+            they&apos;ve completed their courses
           </h3>
         </div>
       </div>
@@ -124,33 +124,40 @@ export default function Admission() {
         </div>
       </section>
 
-      {/* <div>
+      <div className={styles.entry}>
         <Image
           alt="requirements-image"
           src={"/assets/requirements.png"}
           width={672}
           height={681}
+          className={styles.entry__image}
         />
 
         <div className={styles.requirements__right}>
-          <h2>Entry Requirements</h2>
-          <span>Here is what you need to study at Cyan University</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non
-            lorem viverra, gravida risus id, fringilla lacus. Nam luctus diam
-            nec velit porttitor, nec efficitur velit tincidunt. Vestibulum ante
-            ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-            curae; Curabitur mollis urna ac ligula pharetra, nec posuere enim
-            consequat. Praesent sodales fermentum sapien, at tincidunt sem
-            faucibus eget. Donec sit amet erat vitae nulla volutpat viverra.
+          <h2 className={`${styles.req__title} font-libre-bodoni-700`}>
+            Entry Requirements
+          </h2>
+          <span className={`${styles.req__excert} font-libre-bodoni-400`}>
+            Here is what you need to study at Cyan University
+          </span>
+          <p className={`${styles.req__desc} font-libre-bodoni-500`}>
+            To join our vibrant academic community at Cyan University,
+            you&apos;ll need to meet our standard entry requirements. This
+            includes a high school diploma or equivalent qualification, along
+            with satisfactory scores in relevant standardized tests. We also
+            consider your academic achievements, extracurricular activities, and
+            personal statement in our holistic review process.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non
-            lorem viverra, gravida risus id, fringilla lacus. Nam luctus diam
-            nec velit porttitor, nec efficitur velit tincidunt.
+            For international students, we require proof of English language
+            proficiency through recognized tests like TOEFL or IELTS.
+            Additionally, you&apo;ll need to provide official transcripts,
+            letters of recommendation, and complete our application form. Our
+            admissions team is here to guide you through this process and answer
+            any questions you may have about meeting these requirements.
           </p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
