@@ -3,7 +3,7 @@ $secondary-text: #003340;
 $primary-bg: #003340;
 
 .header__container {
-  height: 110vh;
+  min-height: 100vh;
   width: 100vw;
   background-image: url("/assets/image/header-bg.svg");
   background-size: cover;
@@ -21,7 +21,12 @@ $primary-bg: #003340;
 }
 
 .header__content {
-  padding-top: 12rem;
+  padding-top: 17rem;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 7rem;
+  }
+  
   .minor__titleContainer {
     display: flex;
     align-items: center;

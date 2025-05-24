@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./admission.module.scss";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Admission() {
   const [activeStep, setActiveStep] = useState(1);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const steps = [
     {
@@ -33,6 +35,38 @@ export default function Admission() {
         "Once enrolled, you'll gain access to our comprehensive learning platform. Connect with instructors, join study groups, and start your path to success. Our support team will be with you every step of the way.",
     },
   ];
+
+  const faqs = [
+    {
+      question: "What are the admission requirements?",
+      answer:
+        "To join Cyan University, you'll need a high school diploma or equivalent, satisfactory standardized test scores, and proof of English proficiency for international students. We also consider academic achievements and extracurricular activities.",
+    },
+    {
+      question: "How long does the application process take?",
+      answer:
+        "The application process typically takes 2-4 weeks from submission to decision. We review applications on a rolling basis, and you'll be notified of your admission status via email.",
+    },
+    {
+      question: "What payment options are available?",
+      answer:
+        "We offer flexible payment plans including monthly installments, semester payments, and annual payments. We also provide various financial aid options and scholarships for eligible students.",
+    },
+    {
+      question: "Can I transfer credits from another institution?",
+      answer:
+        "Yes, we accept transfer credits from accredited institutions. Each transfer request is evaluated individually, and credits must be relevant to your chosen program of study.",
+    },
+    {
+      question: "What support services are available for students?",
+      answer:
+        "We provide comprehensive support including academic advising, career counseling, technical support, and 24/7 access to our learning platform. Our dedicated support team is always ready to assist you.",
+    },
+  ];
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
     <div className={styles.admission}>
@@ -235,6 +269,82 @@ export default function Admission() {
           </div>
         </div>
       </div>
+
+      <section className={styles.faqs__container}>
+        <h2 className={`${styles.faqs__title} font-libre-bodoni-700`}>
+          Frequently Asked Questions
+        </h2>
+        <div className={styles.direct__wrapper}>
+          <div className={styles.questions__answers}>
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                className={styles.faq__item}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <button
+                  className={`${styles.faq__question} ${
+                    openFaq === index ? styles.active : ""
+                  }`}
+                  onClick={() => toggleFaq(index)}
+                >
+                  <span>{faq.question}</span>
+                  <motion.span
+                    className={styles.faq__icon}
+                    animate={{ rotate: openFaq === index ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    +
+                  </motion.span>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      className={styles.faq__answer}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p>{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className={styles.direct__mail}>
+            <Image
+              alt={"chat"}
+              src={"/assets/admission/chat.png"}
+              width={100}
+              height={100}
+            />
+            <h3 className={styles.direct__mail__title}>
+              Do you have more enquiries?
+            </h3>
+            <p className={styles.message__direct}>
+              Whatever your query, we can connect you to the right people who
+              can help. You can contact us by phone or email, or you can fill
+              out our online form
+            </p>
+
+            <button className={styles.shoot__btn}>
+              Shoot a direct mail
+              <Image
+                src="/assets/admission/submit-arr.png"
+                alt="arrow right"
+                width={24}
+                height={24}
+                className={styles.button__icon}
+              />
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
