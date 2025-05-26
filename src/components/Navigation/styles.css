@@ -18,16 +18,30 @@ nav {
   width: 100vw;
   height: 110vh;
   pointer-events: none; /* Allow clicks to pass through when menu is closed */
+  z-index: 10000;
 }
 
 .open-bg {
   background-color: #003340;
   pointer-events: auto; /* Enable clicks when menu is open */
+  z-index: 10000;
 }
 
 .close-bg {
   background-color: #003340;
   pointer-events: none; /* Disable clicks when menu is closed */
+}
+
+/* Add styles to ensure the menu toggle button is clickable */
+button {
+  pointer-events: auto !important;
+  z-index: 10002;
+}
+
+/* Ensure menu items are above the background */
+.navList {
+  position: relative;
+  z-index: 10002;
 }
 
 .max-w {

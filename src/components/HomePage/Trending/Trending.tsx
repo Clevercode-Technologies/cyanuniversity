@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Trending.module.scss";
 
 export default function Trending() {
@@ -36,15 +37,17 @@ export default function Trending() {
             Top 10 Skills Every Aspiring Developer Should Learn in 2024
           </h2>
 
-          <button className="font-libre-bodoni-700">
-            Read more
-            <Image
-              alt="arrow"
-              src="/assets/trending/icons/arrow.png"
-              width={12.47}
-              height={12.47}
-            />
-          </button>
+          <Link href="/blogs">
+            <button className="font-libre-bodoni-700">
+              Read more
+              <Image
+                alt="arrow"
+                src="/assets/trending/icons/arrow.png"
+                width={12.47}
+                height={12.47}
+              />
+            </button>
+          </Link>
         </div>
         {/* right side */}
         <div className={styles.trending__content__right}>
@@ -68,18 +71,20 @@ export default function Trending() {
               </div>
 
               <h2 className="font-libre-bodoni-600">
-              How to Build a Portfolio That Stands Out
+                How to Build a Portfolio That Stands Out
               </h2>
 
-              <button className="font-libre-bodoni-700">
-                Read more
-                <Image
-                  alt="arrow"
-                  src="/assets/trending/icons/arrow.png"
-                  width={12.47}
-                  height={12.47}
-                />
-              </button>
+              <Link href="/blogs">
+                <button className="font-libre-bodoni-700">
+                  Read more
+                  <Image
+                    alt="arrow"
+                    src="/assets/trending/icons/arrow.png"
+                    width={12.47}
+                    height={12.47}
+                  />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -103,32 +108,36 @@ export default function Trending() {
               </div>
 
               <h2 className="font-libre-bodoni-600">
-              Why Cybersecurity Skills Are in High Demand Today
+                Why Cybersecurity Skills Are in High Demand Today
               </h2>
 
-              <button className="font-libre-bodoni-700">
-                Read more
-                <Image
-                  alt="arrow"
-                  src="/assets/trending/icons/arrow.png"
-                  width={12.47}
-                  height={12.47}
-                />
-              </button>
+              <Link href="/blogs">
+                <button className="font-libre-bodoni-700">
+                  Read more
+                  <Image
+                    alt="arrow"
+                    src="/assets/trending/icons/arrow.png"
+                    width={12.47}
+                    height={12.47}
+                  />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <button className={`font-libre-bodoni-700 ${styles.trending__button}`}>
-        View All
-        <Image
-          alt="arrow"
-          src="/assets/icons/top-right-white.png"
-          width={20}
-          height={20}
-        />
-      </button>
+      <Link href="/blogs">
+        <button className={`font-libre-bodoni-700 ${styles.trending__button}`}>
+          View All
+          <Image
+            alt="arrow"
+            src="/assets/icons/top-right-white.png"
+            width={20}
+            height={20}
+          />
+        </button>
+      </Link>
     </div>
   );
 }

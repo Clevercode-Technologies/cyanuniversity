@@ -45,7 +45,8 @@
         align-items: center;
         gap: 10px;
 
-        img { /* Styling for the calendar icon - MAINTAIN ORIGINAL SIZE */
+        img {
+          /* Styling for the calendar icon - MAINTAIN ORIGINAL SIZE */
           width: 17px;
           height: 17px;
         }
@@ -74,10 +75,23 @@
         background: none;
         border: none;
         font-size: 16px;
+        color: #003340;
+        cursor: pointer;
+        transition: all 0.3s ease;
 
-        img { /* Styling for the arrow icon - MAINTAIN ORIGINAL SIZE */
+        &:hover {
+          color: #002530;
+          transform: translateX(5px);
+
+          img {
+            transform: translateX(5px);
+          }
+        }
+
+        img {
           width: 12.47px;
           height: 12.47px;
+          transition: transform 0.3s ease;
         }
       }
     }
@@ -109,7 +123,8 @@
             align-items: center;
             gap: 10px;
 
-            img { /* Styling for the calendar icon - MAINTAIN ORIGINAL SIZE */
+            img {
+              /* Styling for the calendar icon - MAINTAIN ORIGINAL SIZE */
               width: 17px;
               height: 17px;
             }
@@ -138,10 +153,23 @@
             background: none;
             border: none;
             font-size: 16px;
+            color: #003340;
+            cursor: pointer;
+            transition: all 0.3s ease;
 
-            img { /* Styling for the arrow icon - MAINTAIN ORIGINAL SIZE */
+            &:hover {
+              color: #002530;
+              transform: translateX(5px);
+
+              img {
+                transform: translateX(5px);
+              }
+            }
+
+            img {
               width: 12.47px;
               height: 12.47px;
+              transition: transform 0.3s ease;
             }
           }
         }
@@ -161,10 +189,21 @@
     display: flex;
     align-items: flex-end;
     cursor: pointer;
+    transition: all 0.3s ease;
 
-    img { /* Styling for the view all arrow icon - MAINTAIN ORIGINAL SIZE */
+    &:hover {
+      background-color: #002530;
+      transform: translateX(5px);
+
+      img {
+        transform: translateX(5px);
+      }
+    }
+
+    img {
       width: 20px;
       height: 20px;
+      transition: transform 0.3s ease;
     }
 
     @media screen and (max-width: 768px) {

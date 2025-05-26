@@ -84,7 +84,7 @@ $border-color: #003340;
           .featured__card__info__title__text {
             font-size: 20px;
             line-height: 130%;
-            color: $secondary-text
+            color: $secondary-text;
           }
 
           .featured__card__info__title__description {
@@ -104,6 +104,21 @@ $border-color: #003340;
             border-bottom: 2px solid $border-color;
             padding-bottom: 5px;
             margin-top: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: $button-bg;
+              transform: translateX(5px);
+
+              .featured__card__info__title__button__icon {
+                transform: translateX(5px);
+              }
+            }
+
+            .featured__card__info__title__button__icon {
+              transition: transform 0.3s ease;
+            }
           }
         }
       }

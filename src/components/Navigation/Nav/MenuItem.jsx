@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import styles from "./Menu.module.scss";
 
 const variants = {
@@ -39,9 +40,9 @@ export const MenuItem = ({ i, toggleOpen, onWaitlistClick }) => {
   const renderContent = () => {
     if (i.type === "link") {
       return (
-        <a className={styles.menuLink} href={i.path}>
+        <Link href={i.path} className={styles.menuLink}>
           {i.title}
-        </a>
+        </Link>
       );
     } else if (i.type === "auth") {
       return (

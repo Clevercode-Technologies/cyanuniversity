@@ -28,6 +28,19 @@ $nav-link-color: #00080a;
       .navigation__link {
         text-decoration: none;
         color: $nav-link-color;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #002530;
+
+          .navigation__icon {
+            transform: translateX(5px);
+          }
+        }
+
+        .navigation__icon {
+          transition: transform 0.3s ease;
+        }
       }
     }
   }
@@ -45,6 +58,20 @@ $nav-link-color: #00080a;
     border: none;
     width: 180px;
     height: 46px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #002530;
+      transform: translateX(5px);
+
+      img {
+        transform: translateX(5px);
+      }
+    }
+
+    img {
+      transition: transform 0.3s ease;
+    }
   }
 }
 

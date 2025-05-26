@@ -11,6 +11,8 @@ $text-color-accent: $primary-accent-color;
   flex-direction: column;
   align-items: center;
   padding-left: 0; // Reset default ul padding
+  z-index: 10002;
+  pointer-events: auto;
 }
 
 // Styles for MenuItem.jsx
@@ -20,6 +22,9 @@ $text-color-accent: $primary-accent-color;
   // Default padding, can be overridden by type-specific classes
   padding-top: 15px;
   padding-bottom: 15px;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10002;
 }
 
 .menuItemLinkType {
@@ -41,6 +46,9 @@ $text-color-accent: $primary-accent-color;
 .menuLink {
   color: $text-color-light;
   text-decoration: none; // Common reset for links
+  pointer-events: auto;
+  position: relative;
+  z-index: 10002;
   &:hover {
     // Add hover effect if desired, e.g., color change or underline
     // text-decoration: underline;
@@ -58,6 +66,9 @@ $text-color-accent: $primary-accent-color;
   justify-content: center;
   text-decoration: none; // Ensure links styled as buttons don't have underline
   box-sizing: border-box; // Ensure padding and border don't increase width beyond 185px
+  pointer-events: auto;
+  position: relative;
+  z-index: 10002;
 }
 
 .authButtonSignIn {

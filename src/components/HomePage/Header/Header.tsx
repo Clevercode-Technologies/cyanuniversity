@@ -3,15 +3,11 @@
 import { Navigation } from "@/components";
 import styles from "./Header.module.scss";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
-
-  const handleWaitlistClick = () => {
-    router.push("/waitlist");
-  };
 
   return (
     <>
@@ -47,19 +43,20 @@ export default function Header() {
               <br />
               Generation of Tech <br /> Leaders
             </div>
-            <button
-              className={`${styles.register__button} font-libre-bodoni-700`}
-              onClick={handleWaitlistClick}
-            >
-              <span>Join Waitlist</span>
-              <Image
-                alt="right arrow"
-                src={"/assets/icons/arr-right.png"}
-                width={24}
-                height={24}
-                className={styles.arrow__icon}
-              />
-            </button>
+            <Link href="/waitlist">
+              <button
+                className={`${styles.register__button} font-libre-bodoni-700`}
+              >
+                <span>Join Waitlist</span>
+                <Image
+                  alt="right arrow"
+                  src={"/assets/icons/arr-right.png"}
+                  width={24}
+                  height={24}
+                  className={styles.arrow__icon}
+                />
+              </button>
+            </Link>
           </div>
         </div>
       )}

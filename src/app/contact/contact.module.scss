@@ -3,7 +3,7 @@
     background-image: url("/assets/contact/contact-banner.png");
     object-fit: cover;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,65 +20,95 @@
         rgba(242, 250, 250, 0.95) 57.07%,
         #f2fafa 84.29%
       );
-      max-width: 65%;
+      max-width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 100px;
+      padding: 0 20px;
+
+      @media screen and (min-width: 768px) {
+        max-width: 65%;
+        padding-left: 100px;
+      }
 
       .banner__title {
-        font-size: 60px;
+        font-size: 36px;
         letter-spacing: 2%;
         color: #00080a;
+
+        @media screen and (min-width: 768px) {
+          font-size: 60px;
+        }
       }
       .banner__description {
-        font-size: 20px;
-        line-height: 32px;
-        max-width: 559px;
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 100%;
+
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          line-height: 32px;
+          max-width: 559px;
+        }
       }
     }
   }
 
   section {
     background-color: #003340;
-    padding: 87px 50px;
-    min-height: 894px;
-    margin: 60px 50px;
+    padding: 40px 20px;
+    min-height: auto;
+    margin: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
 
     @media screen and (min-width: 768px) {
+      padding: 87px 50px;
+      min-height: 894px;
+      margin: 60px 50px;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      gap: 60px;
     }
 
     form {
       background-color: white;
       border-radius: 16px;
       padding: 21px;
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        width: auto;
+      }
 
       h3 {
         font-family: "Libre Bodoni", serif;
         font-optical-sizing: auto;
-        font-weight: 500; /* You can adjust this weight */
+        font-weight: 500;
         font-style: normal;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 100%;
         color: #021c3d;
+
+        @media screen and (min-width: 768px) {
+          font-size: 24px;
+        }
       }
 
       h2 {
         color: #021c3d;
         font-family: "Libre Bodoni", serif;
         font-optical-sizing: auto;
-        font-weight: 700; /* You can adjust this weight */
+        font-weight: 700;
         font-style: normal;
-        font-size: 32px;
+        font-size: 24px;
+
+        @media screen and (min-width: 768px) {
+          font-size: 32px;
+        }
       }
 
       div {
@@ -87,13 +117,17 @@
 
         label {
           color: #021c3d;
-          font-size: 16px;
+          font-size: 14px;
           line-height: 100%;
           font-family: "Libre Bodoni", serif;
           font-optical-sizing: auto;
-          font-weight: 500; /* You can adjust this weight */
+          font-weight: 500;
           font-style: normal;
           margin-bottom: 8px;
+
+          @media screen and (min-width: 768px) {
+            font-size: 16px;
+          }
         }
 
         input,
@@ -102,16 +136,21 @@
           padding: 10px 20px;
           color: #8f8b8b;
           background-color: #f7f7f7;
-          min-width: 584px;
+          width: 100%;
           margin-bottom: 24px;
           font-family: "Libre Bodoni", serif;
           font-optical-sizing: auto;
-          font-weight: 400; /* You can adjust this weight */
+          font-weight: 400;
           font-style: normal;
           min-height: 40px;
           outline: none;
-          font-size: 16px;
+          font-size: 14px;
           line-height: 100%;
+
+          @media screen and (min-width: 768px) {
+            min-width: 584px;
+            font-size: 16px;
+          }
 
           ::placeholder {
             color: #8f8b8b;
@@ -127,19 +166,154 @@
         align-items: center;
         padding: 14px 0px;
         gap: 12px;
-
         font-family: "Libre Bodoni", serif;
         font-optical-sizing: auto;
-        font-weight: 600; /* You can adjust this weight */
+        font-weight: 600;
         font-style: normal;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 37px;
-
         justify-content: center;
         color: white;
         outline: none;
         border: none;
+
+        @media screen and (min-width: 768px) {
+          font-size: 16px;
+        }
       }
+    }
+
+    .right__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+
+      .excert {
+        font-family: "Libre Bodoni", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          line-height: 32px;
+          text-align: left;
+        }
+      }
+
+      .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 0;
+        }
+
+        .column {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+
+          @media screen and (min-width: 768px) {
+            width: auto;
+          }
+
+          h2.contact__titles {
+            font-family: "Libre Bodoni", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 100%;
+            color: white;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+              font-size: 24px;
+            }
+          }
+          .icon__content {
+            font-size: 14px;
+            line-height: 100%;
+            font-family: "Libre Bodoni", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .socials {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .socials__title {
+          color: #ffb600;
+          font-size: 18px;
+          line-height: 24px;
+          font-family: "Libre Bodoni", serif;
+          font-optical-sizing: auto;
+          font-weight: 500;
+          font-style: normal;
+          text-align: center;
+
+          @media screen and (min-width: 768px) {
+            font-size: 20px;
+            line-height: 32px;
+          }
+        }
+        .socials__wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          gap: 20px;
+          flex-wrap: wrap;
+
+          @media screen and (min-width: 768px) {
+            justify-content: space-between;
+            gap: 0;
+            flex-wrap: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .map__view {
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+
+    @media screen and (min-width: 768px) {
+      height: 600px;
+      max-width: 1352px;
+      margin: 40px auto;
     }
   }
 }

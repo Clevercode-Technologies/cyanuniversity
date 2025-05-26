@@ -2,8 +2,15 @@
 
 import Image from "next/image";
 import styles from "./courses.module.scss";
+import { useState } from "react";
 
 export default function Courses() {
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  const toggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
   return (
     <div className={styles.courses}>
       <div className={styles.banner__container}>
@@ -24,16 +31,30 @@ export default function Courses() {
             <h2 className={`${styles.section__title} font-libre-bodoni-700`}>
               We found 20 courses for you
             </h2>
-            <select
-              className="font-libre-bodoni-700"
-              name="Sort by"
-              id="sort_by"
-            >
-              <option value="Latest">Latest</option>
-              <option value="Latest">Latest</option>
-              <option value="Latest">Latest</option>
-              <option value="Latest">Latest</option>
-            </select>
+            <div className={styles.header__controls}>
+              {/* <button
+                className={`${styles.filter__button} font-libre-bodoni-700`}
+                onClick={toggleFilter}
+              >
+                Filter
+                <Image
+                  src="/assets/icons/filter.png"
+                  alt="filter"
+                  width={20}
+                  height={20}
+                />
+              </button> */}
+              <select
+                className="font-libre-bodoni-700"
+                name="Sort by"
+                id="sort_by"
+              >
+                <option value="Latest">Latest</option>
+                <option value="Latest">Latest</option>
+                <option value="Latest">Latest</option>
+                <option value="Latest">Latest</option>
+              </select>
+            </div>
           </div>
 
           <div className={styles.left__content}>
@@ -78,7 +99,6 @@ export default function Courses() {
                         width={25}
                         height={25}
                       />
-
                       {"200,000"}
                     </button>
                   </div>
@@ -87,54 +107,10 @@ export default function Courses() {
             ))}
           </div>
 
-          <div
-            style={{
-              width: "100vw",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: "50px 0px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "14px",
-              }}
-            >
-              <span
-                style={{
-                  backgroundColor: "#003340",
-                  width: 41,
-                  height: 41,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  color: "white",
-                  fontSize: 16,
-                  lineHeight: "130%",
-                }}
-                className="font-libre-bodoni-700"
-              >
-                1
-              </span>
-              <span
-                style={{
-                  border: "1px solid #003340",
-                  width: 41,
-                  height: 41,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  color: "#00080A",
-                  fontSize: 16,
-                  lineHeight: "130%",
-                }}
-              >
-                2
-              </span>
+          <div className={styles.pagination}>
+            <div className={styles.pagination__container}>
+              <span className={styles.pagination__active}>1</span>
+              <span>2</span>
               <Image
                 alt="pagination-next"
                 src="/assets/icons/next-paginate.png"
@@ -144,6 +120,144 @@ export default function Courses() {
             </div>
           </div>
         </div>
+
+        {/* Filter Modal */}
+        <div
+          className={`${styles.filter__modal} ${
+            isFilterOpen ? styles.open : ""
+          }`}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              toggleFilter();
+            }
+          }}
+        >
+          <div className={styles.filter__modal__content}>
+            <div className={styles.filter__modal__header}>
+              <h2 className={`${styles.title} font-libre-bodoni-700`}>
+                Filter
+              </h2>
+              <button
+                className={styles.filter__modal__close}
+                onClick={toggleFilter}
+              >
+                <Image
+                  src="/assets/icons/close.png"
+                  alt="close"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            </div>
+            <div className={styles.filter__modal__body}>
+              <div className={styles.search__bar}>
+                <input
+                  type="text"
+                  name="search"
+                  placeholder="Find your course"
+                />
+                <Image
+                  alt="magnifying-glass"
+                  src="/assets/magnifying-glass.png"
+                  width={12.56}
+                  height={12.56}
+                />
+              </div>
+
+              <h3 className={`${styles.sub__title} font-libre-bodoni-500`}>
+                Categories
+              </h3>
+              <div className={styles.checkbox__container}>
+                {categories.map((category, index) => (
+                  <div className={styles.checkbox__item} key={index}>
+                    <input
+                      type="checkbox"
+                      id={`category-${index}`}
+                      name={category}
+                      className={styles.checkbox__input}
+                    />
+                    <label
+                      htmlFor={`category-${index}`}
+                      className={`${styles.checkbox__label} font-libre-bodoni-400`}
+                    >
+                      {category}
+                    </label>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className={`${styles.sub__title} font-libre-bodoni-500`}>
+                Location
+              </h3>
+              <div className={styles.checkbox__container}>
+                <div className={styles.checkbox__item}>
+                  <input
+                    type="checkbox"
+                    id={`online`}
+                    name={"range"}
+                    className={styles.checkbox__input}
+                  />
+                  <label
+                    htmlFor={`online`}
+                    className={`${styles.checkbox__label} font-libre-bodoni-400`}
+                  >
+                    Online
+                  </label>
+                </div>
+                <div className={styles.checkbox__item}>
+                  <input
+                    type="checkbox"
+                    id={`on_campus`}
+                    name={"range"}
+                    className={styles.checkbox__input}
+                  />
+                  <label
+                    htmlFor={`on_campus`}
+                    className={`${styles.checkbox__label} font-libre-bodoni-400`}
+                  >
+                    On Campus
+                  </label>
+                </div>
+              </div>
+
+              <h3 className={`${styles.sub__title} font-libre-bodoni-500`}>
+                Programme level
+              </h3>
+              <div className={styles.checkbox__container}>
+                <div className={styles.checkbox__item}>
+                  <input
+                    type="checkbox"
+                    id={`graduate`}
+                    name={"range"}
+                    className={styles.checkbox__input}
+                  />
+                  <label
+                    htmlFor={`graduate`}
+                    className={`${styles.checkbox__label} font-libre-bodoni-400`}
+                  >
+                    Graduate
+                  </label>
+                </div>
+                <div className={styles.checkbox__item}>
+                  <input
+                    type="checkbox"
+                    id={`undergraduate`}
+                    name={"range"}
+                    className={styles.checkbox__input}
+                  />
+                  <label
+                    htmlFor={`undergraduate`}
+                    className={`${styles.checkbox__label} font-libre-bodoni-400`}
+                  >
+                    Undergraduate
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Filter */}
         <div className={styles.right__container}>
           <h2 className={`${styles.title} font-libre-bodoni-700`}>Search</h2>
           <div className={styles.search__bar}>
@@ -159,18 +273,17 @@ export default function Courses() {
           <h3 className={`${styles.sub__title} font-libre-bodoni-500`}>
             Categories
           </h3>
-
           <div className={styles.checkbox__container}>
             {categories.map((category, index) => (
               <div className={styles.checkbox__item} key={index}>
                 <input
                   type="checkbox"
-                  id={`category-${index}`}
+                  id={`desktop-category-${index}`}
                   name={category}
                   className={styles.checkbox__input}
                 />
                 <label
-                  htmlFor={`category-${index}`}
+                  htmlFor={`desktop-category-${index}`}
                   className={`${styles.checkbox__label} font-libre-bodoni-400`}
                 >
                   {category}
@@ -186,12 +299,12 @@ export default function Courses() {
             <div className={styles.checkbox__item}>
               <input
                 type="checkbox"
-                id={`online`}
+                id={`desktop-online`}
                 name={"range"}
                 className={styles.checkbox__input}
               />
               <label
-                htmlFor={`online`}
+                htmlFor={`desktop-online`}
                 className={`${styles.checkbox__label} font-libre-bodoni-400`}
               >
                 Online
@@ -200,18 +313,19 @@ export default function Courses() {
             <div className={styles.checkbox__item}>
               <input
                 type="checkbox"
-                id={`on_campus`}
+                id={`desktop-on_campus`}
                 name={"range"}
                 className={styles.checkbox__input}
               />
               <label
-                htmlFor={`on_compus`}
+                htmlFor={`desktop-on_campus`}
                 className={`${styles.checkbox__label} font-libre-bodoni-400`}
               >
-                On Compus
+                On Campus
               </label>
             </div>
           </div>
+
           <h3 className={`${styles.sub__title} font-libre-bodoni-500`}>
             Programme level
           </h3>
@@ -219,12 +333,12 @@ export default function Courses() {
             <div className={styles.checkbox__item}>
               <input
                 type="checkbox"
-                id={`graduate`}
+                id={`desktop-graduate`}
                 name={"range"}
                 className={styles.checkbox__input}
               />
               <label
-                htmlFor={`graduate`}
+                htmlFor={`desktop-graduate`}
                 className={`${styles.checkbox__label} font-libre-bodoni-400`}
               >
                 Graduate
@@ -233,12 +347,12 @@ export default function Courses() {
             <div className={styles.checkbox__item}>
               <input
                 type="checkbox"
-                id={`undergraduate`}
+                id={`desktop-undergraduate`}
                 name={"range"}
                 className={styles.checkbox__input}
               />
               <label
-                htmlFor={`undergraduate`}
+                htmlFor={`desktop-undergraduate`}
                 className={`${styles.checkbox__label} font-libre-bodoni-400`}
               >
                 Undergraduate

@@ -4,14 +4,8 @@ import Image from "next/image";
 import styles from "./Navigation.module.scss";
 import Link from "next/link";
 import MobileNavigation from "@/components/Navigation/MobileNavigation";
-import { useRouter } from "next/navigation";
 
 export default function Navigation() {
-  const router = useRouter();
-
-  const handleWaitlistClick = () => {
-    router.push("/waitlist");
-  };
 
   return (
     <>
@@ -41,18 +35,19 @@ export default function Navigation() {
           ))}
         </ul>
 
-        <button
-          className={`${styles.navigation__button} font-libre-bodoni-700`}
-          onClick={handleWaitlistClick}
-        >
-          <span>Join Waitlist</span>
-          <Image
-            src="/assets/icons/top-right-white.png"
-            alt="arrow-right"
-            width={24}
-            height={24}
-          />
-        </button>
+        <Link href="/waitlist">
+          <button
+            className={`${styles.navigation__button} font-libre-bodoni-700`}
+          >
+            <span>Join Waitlist</span>
+            <Image
+              src="/assets/icons/top-right-white.png"
+              alt="arrow-right"
+              width={24}
+              height={24}
+            />
+          </button>
+        </Link>
       </div>
 
       <div className={styles.mobileMenu}>

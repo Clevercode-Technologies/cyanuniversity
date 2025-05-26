@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Featured.module.scss";
 
 export default function Featured() {
@@ -48,16 +49,20 @@ export default function Featured() {
                 >
                   {course.description}
                 </p>
-                <button className={`${styles.featured__card__info__title__button} font-libre-bodoni-700`}>
+                <Link href="/courses">
+                  <button
+                    className={`${styles.featured__card__info__title__button} font-libre-bodoni-700`}
+                  >
                     LEARN MORE
-                  <Image
-                    src="/assets/featured/more.png"
-                    alt="arrow-right"
-                    width={25}
-                    height={25}
-                    className={`${styles.featured__card__info__title__button__icon}`}
-                  />
-                </button>
+                    <Image
+                      src="/assets/featured/more.png"
+                      alt="arrow-right"
+                      width={25}
+                      height={25}
+                      className={`${styles.featured__card__info__title__button__icon}`}
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
