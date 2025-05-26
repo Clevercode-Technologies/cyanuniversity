@@ -16,6 +16,9 @@ export default function Header() {
       pathname.startsWith("/admission") ||
       pathname.startsWith("/blog") ||
       pathname.startsWith("/contact") ||
+      pathname.startsWith("/support") ||
+      pathname.startsWith("/privacy") ||
+      pathname.startsWith("/terms") ||
       pathname.startsWith("/waitlist") ? (
         <></>
       ) : (
