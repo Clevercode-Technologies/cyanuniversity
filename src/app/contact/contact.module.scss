@@ -1,3 +1,10 @@
+$primary-text: #021c3d;
+$secondary-text: #00080a;
+$tertiary-bg: #f9fcff;
+$button-bg: #003340;
+$border-color: #003340;
+$primary-color: #003340;
+
 .contact {
   max-width: 100vw;
   overflow-x: hidden;
@@ -396,7 +403,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+
         .socials__title {
           color: #ffb600;
           font-size: 18px;
