@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./Blog.module.scss";
+import styles from "./blog.module.scss";
 
 export default function Blogs() {
   const blogPosts = [
