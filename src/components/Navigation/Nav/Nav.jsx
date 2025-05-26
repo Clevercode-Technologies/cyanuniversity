@@ -40,7 +40,7 @@ const itemIds = [
   { path: "/courses", title: "Courses", type: "link" },
   { path: "/about-us", title: "About Us", type: "link" },
   { path: "/admission", title: "Admission", type: "link" },
-  { path: "/blog", title: "Blog", type: "link" },
+  { path: "/blogs", title: "Blog", type: "link" },
   { path: "/contact", title: "Contact", type: "link" },
   { type: "auth" },
 ];

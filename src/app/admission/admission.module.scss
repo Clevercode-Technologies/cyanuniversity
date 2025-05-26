@@ -1,9 +1,12 @@
 .admission {
+  max-width: 100vw;
+  overflow-x: hidden;
+
   .banner__container {
     background-image: url("/assets/admission/admission-banner.png");
     object-fit: cover;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,22 +23,37 @@
         rgba(242, 250, 250, 0.95) 57.07%,
         #f2fafa 84.29%
       );
-      max-width: 65%;
+      max-width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 100px;
+      padding: 20px;
+
+      @media screen and (min-width: 768px) {
+        max-width: 65%;
+        padding-left: 100px;
+      }
 
       .banner__title {
-        font-size: 60px;
+        font-size: 36px;
         letter-spacing: 2%;
         color: #00080a;
+
+        @media screen and (min-width: 768px) {
+          font-size: 60px;
+        }
       }
       .banner__description {
-        font-size: 20px;
-        line-height: 32px;
-        max-width: 559px;
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 100%;
+
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          line-height: 32px;
+          max-width: 559px;
+        }
       }
     }
   }
@@ -228,32 +246,32 @@
     display: flex;
     flex-direction: column;
     margin: 90px 0px;
+    padding: 0 20px;
 
     @media screen and (min-width: 1000px) {
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      padding: 0;
     }
 
     .entry__image {
-      width: 500px;
-      height: 681px;
-      margin-right: -7%;
+      width: 100%;
+      height: auto;
+      margin-right: 0;
       z-index: 1;
 
-      @media screen and (max-width: 1000px) {
-        width: 100%;
-        height: 500px;
-        z-index: 0;
-        margin-right: 0px;
-        object-fit: cover;
+      @media screen and (min-width: 1000px) {
+        width: 500px;
+        height: 681px;
+        margin-right: -7%;
       }
     }
 
     .requirements__right {
       width: 100%;
       background-color: white;
-      padding: 36px;
+      padding: 20px;
       height: fit-content;
 
       @media screen and (min-width: 1000px) {
@@ -263,21 +281,35 @@
       }
 
       .req__title {
-        font-size: 40px;
-        line-height: 40px;
+        font-size: 28px;
+        line-height: 32px;
         text-align: center;
+
+        @media screen and (min-width: 768px) {
+          font-size: 40px;
+          line-height: 40px;
+        }
       }
       .req__excert {
         text-align: center;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 100%;
         color: #00080a;
         display: block;
+
+        @media screen and (min-width: 768px) {
+          font-size: 16px;
+        }
       }
       .req__desc {
-        font-size: 20px;
+        font-size: 16px;
         color: #021215cb;
-        line-height: 40px;
+        line-height: 28px;
+
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          line-height: 40px;
+        }
       }
     }
   }
@@ -286,11 +318,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px 30px;
+    margin: 0px 20px;
+    padding: 0 20px;
+
+    @media screen and (min-width: 768px) {
+      margin: 0px 30px;
+      padding: 0;
+    }
+
     .title {
-      font-size: 40px;
-      line-height: 40px;
+      font-size: 28px;
+      line-height: 32px;
       text-align: center;
+
+      @media screen and (min-width: 768px) {
+        font-size: 40px;
+        line-height: 40px;
+      }
     }
 
     .enroll__image {
@@ -299,24 +343,27 @@
     }
     .erollment__form {
       margin-top: -30%;
-      width: 95%;
+      width: 100%;
       background-color: white;
-      padding: 87px 52px 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 40px 20px;
+
+      @media screen and (min-width: 768px) {
+        width: 95%;
+        padding: 87px 52px 50px;
+      }
 
       .title__form {
-        font-size: 40px;
-        line-height: 40px;
+        font-size: 28px;
+        line-height: 32px;
         color: #00080a;
-        margin-bottom: 42px;
-        align-self: flex-start;
+        margin-bottom: 32px;
+        text-align: center;
 
-        @media screen and (max-width: 768px) {
-          text-align: center;
-          line-height: 60px;
+        @media screen and (min-width: 768px) {
+          font-size: 40px;
+          line-height: 40px;
+          margin-bottom: 42px;
+          text-align: left;
         }
       }
 
@@ -453,11 +500,22 @@
     flex-direction: column;
     background-color: #f0f8fb;
     margin-bottom: 90px;
+    padding: 0 20px;
+
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
 
     .faqs__title {
-      font-size: 40px;
+      font-size: 28px;
       letter-spacing: 2%;
-      line-height: 180%;
+      line-height: 140%;
+      text-align: center;
+
+      @media screen and (min-width: 768px) {
+        font-size: 40px;
+        line-height: 180%;
+      }
     }
 
     .direct__wrapper {

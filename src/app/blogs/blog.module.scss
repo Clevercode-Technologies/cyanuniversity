@@ -1,9 +1,12 @@
 .blog {
+  max-width: 100vw;
+  overflow-x: hidden;
+
   .banner__container {
-    background-image: url("/assets/blogs/blog-banner.png");
+    background-image: url("/assets/blog/blog-banner.png");
     object-fit: cover;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,128 +23,100 @@
         rgba(242, 250, 250, 0.95) 57.07%,
         #f2fafa 84.29%
       );
-      max-width: 65%;
+      max-width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 100px;
+      padding: 20px;
+
+      @media screen and (min-width: 768px) {
+        max-width: 65%;
+        padding-left: 100px;
+      }
 
       .banner__title {
-        font-size: 60px;
+        font-size: 36px;
         letter-spacing: 2%;
         color: #00080a;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 768px) {
+          font-size: 60px;
+        }
       }
       .banner__description {
-        font-size: 20px;
-        line-height: 32px;
-        max-width: 559px;
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 100%;
+
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          line-height: 32px;
+          max-width: 559px;
+        }
       }
     }
   }
 
-  .page__title {
-    font-size: 20px;
-    letter-spacing: 2%;
-    line-height: 180%;
-    text-align: center;
-    width: 100%;
-    margin: 50px 0px;
-  }
-
-  .blog__post__wrapper {
+  .blog__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 0 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 
     @media screen and (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
-      padding: 0 40px;
+      padding: 40px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  div.trending__content__left {
-    margin-bottom: 0;
-    max-width: 100%;
-    background-color: white;
-    padding: 30px;
+  .blog__card {
+    background: white;
     border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
-    img {
+    .blog__image {
       width: 100%;
-      height: auto;
-      max-width: 100%;
-      border-radius: 4px;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .date {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 20px 0;
+    .blog__content {
+      padding: 20px;
 
-      img {
-        width: 17px;
-        height: 17px;
+      .blog__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: $primary-text;
       }
 
-      p {
+      .blog__excerpt {
         font-size: 14px;
-        line-height: 120%;
-        letter-spacing: 2%;
-        color: #00080a;
-      }
-    }
-
-    h2 {
-      font-size: 20px;
-      line-height: 140%;
-      color: #00080a;
-      margin-bottom: 15px;
-    }
-
-    .excerpt {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #4b5563;
-      margin-bottom: 20px;
-    }
-
-    button {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      outline: none;
-      background: none;
-      border: none;
-      font-size: 16px;
-      color: #003340;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: #002530;
-        transform: translateX(5px);
-
-        img {
-          transform: translateX(5px);
-        }
+        line-height: 1.5;
+        color: $secondary-text;
+        margin-bottom: 15px;
       }
 
-      img {
-        width: 12.47px;
-        height: 12.47px;
-        transition: transform 0.3s ease;
+      .blog__meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: $secondary-text;
       }
     }
   }

@@ -1,0 +1,128 @@
+.support {
+  .banner__container {
+    background-color: #f0f8fb;
+    padding: 60px 20px;
+    text-align: center;
+
+    .banner__content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .banner__title {
+        font-size: 48px;
+        color: #00080a;
+        margin-bottom: 20px;
+      }
+
+      .banner__description {
+        font-size: 24px;
+        color: #003340;
+      }
+    }
+  }
+
+  .support__content {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .section__title {
+      font-size: 32px;
+      color: #00080a;
+      margin-bottom: 30px;
+    }
+
+    .contact__section {
+      .contact__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .form__group {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          label {
+            font-size: 16px;
+            color: #003340;
+            font-weight: 500;
+          }
+
+          input,
+          textarea {
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: inherit;
+
+            &:focus {
+              outline: none;
+              border-color: #003340;
+            }
+          }
+        }
+
+        .submit__button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          background-color: #003340;
+          color: white;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #002530;
+          }
+
+          .button__icon {
+            transition: transform 0.3s ease;
+          }
+
+          &:hover .button__icon {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+
+    .faq__section {
+      .faq__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .faq__item {
+          padding: 20px;
+          background-color: #f0f8fb;
+          border-radius: 8px;
+
+          h3 {
+            font-size: 20px;
+            color: #00080a;
+            margin-bottom: 10px;
+          }
+
+          p {
+            font-size: 16px;
+            color: #003340;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}

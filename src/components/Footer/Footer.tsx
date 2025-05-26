@@ -2,18 +2,21 @@
 
 import Image from "next/image";
 import styles from "./Footer.module.scss";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.footerAbout}>
-          <Image
-            alt="logo"
-            src="/assets/logo/logo.png"
-            width={300}
-            height={120}
-          />
+          <Link href="/">
+            <Image
+              alt="logo"
+              src="/assets/logo/logo.png"
+              width={300}
+              height={120}
+            />
+          </Link>
           <p className={`${styles.footerAboutText} font-libre-bodoni-400`}>
             Unlock Digital Mastery Effortlessly! Explore and enhance your skills
             with our user-friendly platform.
@@ -29,22 +32,22 @@ export default function Footer() {
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/about-us">About Us</a>
+              <Link href="/about-us">About Us</Link>
             </li>
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/classes">Our Classes</a>
+              <Link href="/courses">Our Classes</Link>
             </li>
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/blog">Blog</a>
+              <Link href="/blogs">Blog</Link>
             </li>
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -58,17 +61,17 @@ export default function Footer() {
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/support">Support</a>
+              <Link href="/support">Support</Link>
             </li>
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/privacy">Privacy Policy</a>
+              <Link href="/privacy">Privacy Policy</Link>
             </li>
             <li
               className={`${styles.footerLinksColumnItem} font-libre-bodoni-400`}
             >
-              <a href="/terms">Terms & Conditions</a>
+              <Link href="/terms">Terms & Conditions</Link>
             </li>
           </ul>
         </div>
@@ -80,7 +83,11 @@ export default function Footer() {
           </h2>
           <ul className={styles.socials}>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   alt="facebook"
                   src="/assets/socials/facebook.png"
@@ -90,7 +97,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   alt="instagram"
                   src="/assets/socials/instagram.png"
@@ -100,7 +111,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   alt="twitter"
                   src="/assets/socials/twitter.png"
@@ -110,7 +125,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   alt="linkedin"
                   src="/assets/socials/linkedin.png"
@@ -120,7 +139,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   alt="youtube"
                   src="/assets/socials/youtube.png"

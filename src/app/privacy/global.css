@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #003340;
+  --secondary-color: #f0f8fb;
+  --text-color: #00080a;
+  --text-secondary: #003340;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Libre Bodoni", serif;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.font-libre-bodoni-400 {
+  font-weight: 400;
+}
+
+.font-libre-bodoni-500 {
+  font-weight: 500;
+}
+
+.font-libre-bodoni-600 {
+  font-weight: 600;
+}
+
+.font-libre-bodoni-700 {
+  font-weight: 700;
+}
