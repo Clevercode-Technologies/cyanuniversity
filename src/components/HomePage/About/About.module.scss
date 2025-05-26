@@ -6,6 +6,10 @@ $dark-button-bg: #003340;
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 1370px) {
+    justify-content: center;
+  }
+
   .about__left {
     display: flex;
     gap: 12px;
@@ -14,7 +18,7 @@ $dark-button-bg: #003340;
     // Ensure parent has perspective for 3D transforms if needed, though not strictly for translateY
     // perspective: 1000px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1370px) {
       display: none;
     }
 
@@ -46,6 +50,7 @@ $dark-button-bg: #003340;
     flex-direction: column;
     align-items: center;
     max-width: 560px;
+
     .about__right__title {
       color: $dark-text;
       font-size: 40px;
